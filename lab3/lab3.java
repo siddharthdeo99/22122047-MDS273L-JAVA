@@ -50,19 +50,40 @@ public class lab3 {
 
     }
 
+    static void search(String[][] arr, int cnt) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name to search");
+        String search = sc.nextLine();
+        for (int i = 0; i < cnt; i++) {
+            if (search.equals(arr[i][0])) {
+                System.out.println("Details found");
+                System.out.println("Name is : " + arr[i][0]);
+                System.out.println("Reg NO is : " + arr[i][1]);
+                System.out.println("Email is : " + arr[i][2]);
+                System.out.println("Class is : " + arr[i][3]);
+                System.out.println("Dept is : " + arr[i][4]);
+                System.out.println();
+            }
+           
+
+        }
+
+    }
+
     public static void main(String[] args) {
-        String[][] arr = new String[10][5];
+        String[][] arr = new String[1024][5];
         int cnt = 0;
         Scanner scc = new Scanner(System.in);
         boolean flag = false;
         do {
 
             flag = true;
-            System.out.println("########### MENU ###########");
+            System.out.println("########### MENU ##############");
             System.out.println("## 1. Collet Student Details###");
-            System.out.println("## 2. Display Details ###");
-            System.out.println("## 3. Quit              ####");
-            System.out.println("############################");
+            System.out.println("## 2. Display Details #########");
+            System.out.println("## 3. Search a student ########");
+            System.out.println("## 4. Quit              #######");
+            System.out.println("###############################");
             System.out.println("Enter your choice: ");
             int inp = Integer.parseInt(scc.nextLine());
             switch (inp) {
@@ -78,8 +99,10 @@ public class lab3 {
                     // System.out.println(arr[1][0]);
                     break;
                 case 3:
-                    flag = false;
-                    break;
+                    search(arr, cnt);
+                case 4:
+                flag = false;
+                break;
 
             }
 
